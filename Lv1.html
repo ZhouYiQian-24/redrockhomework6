@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lv2</title>
+</head>
+<body>
+    <div>
+        <b>请选择您的爱好</b>
+        <br />
+    </div>
+     <ul style="list-style: none;">
+			
+			<li><input type="checkbox" name="hb" />内卷</li>
+			<li><input type="checkbox" name="hb" />疯狂内卷</li>
+			<li><input type="checkbox" name="hb" />拼命内卷</li>
+			<li><input type="checkbox" name="hb" />使劲内卷</li>
+	</ul>
+    
+    <input type="button" onclick="selectAll()" value="全选" id="qx"/>
+    <input type="button" onclick="unselectAll()" value="全不选" id="qbx"/>
+    <input type="button" onclick="selectOther()" value="反选" id="fx"/>
+  
+    <script>
+        function selectAll(){
+            var hb = document.getElementsByName("hb");
+            for (var i=0;i<hb.length;i++){
+                hb[i].checked = true;
+            }
+
+        }
+        function unselectAll(){
+            var hb = document.getElementsByName("hb");
+            for (var i=0;i<hb.length;i++){
+                hb[i].checked = false;
+            }
+
+        }
+        function selectOther(){
+            var hb = document.getElementsByName("hb");
+            for (var i=0;i<hb.length;i++){
+                if (hb[i].checked ==false)
+                    hb[i].checked = true;
+                else
+                    hb[i].checked = false;
+            }
+
+        }
+    </script>
+</body>
+</html>
